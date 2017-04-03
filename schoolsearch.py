@@ -30,9 +30,17 @@ while True:
 #get user input commands
 userInput = raw_input("Enter command ")
 
+inputArray = userInput.split(' ')
 
-if userInput.startswith('S: ') or userInput.startswith('Student: '):
-    print "find student"
+resultsArray = []
+#check if searching for student lastname
+if len(inputArray) >= 2 and inputArray[0] == "S:" or inputArray[0] == "Student:":
+    for i in range(0, len(studentList)):
+        if studentList[i].stlastname == inputArray[1]:
+            resultsArray.append(studentList[i])
 
+for i in range(0, len(resultsArray)):
+    print resultsArray[i].stlastname + "," + resultsArray[i].stfirstname + "," + resultsArray[i].grade + "," + resultsArray[i].room + "," + resultsArray[i].bus + "," + resultsArray[i].gpa + "," + resultsArray[i].tlastname + "," + resultsArray[i].tfirstname
+        
 
 inputFile.close()
