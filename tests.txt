@@ -1,0 +1,12 @@
+//CSC 365 Spring 2017
+// Cole Grigsby and Avi Sharma
+// Lab 1-1 test suite 
+
+//COPY PASTE 
+// TC-X 
+// Tests Requirements XXXX 
+// 
+// expected output: 
+
+
+
