@@ -1,6 +1,6 @@
 # Avinash Sharma
 # Cole Grisby
-# Lab 1
+# CPE 365 Lab 1
 
 #object for students
 class Student:
@@ -14,7 +14,7 @@ class Student:
         self.tlastname = in_tlastname
         self.tfirstname = in_tfirstname
 
-#student list
+#empty list to store each student
 studentList = []
 
 #read through students.txt
@@ -33,14 +33,29 @@ userInput = raw_input("Enter command ")
 inputArray = userInput.split(' ')
 
 resultsArray = []
-#check if searching for student lastname
-if len(inputArray) >= 2 and inputArray[0] == "S:" or inputArray[0] == "Student:":
-    for i in range(0, len(studentList)):
-        if studentList[i].stlastname == inputArray[1]:
-            resultsArray.append(studentList[i])
 
-for i in range(0, len(resultsArray)):
-    print resultsArray[i].stlastname + "," + resultsArray[i].stfirstname + "," + resultsArray[i].grade + "," + resultsArray[i].room + "," + resultsArray[i].bus + "," + resultsArray[i].gpa + "," + resultsArray[i].tlastname + "," + resultsArray[i].tfirstname,
-        
+#function to search for student last name
+def studentLastName(results, students, inArr):
+    for i in range(0, len(students)):
+        if students[i].stlastname == inArr[1]:
+            results.append(students[i])
+            
+#R4 S[tudent]: <lastname> 
+#check if input is for student lastname
+if len(inputArray) == 2:
+    if inputArray[0] == "S:" or inputArray[0] == "Student:":
+        studentLastName(resultsArray, studentList, inputArray)
+        for i in range(0, len(resultsArray)):
+            print resultsArray[i].stlastname + "," + resultsArray[i].stfirstname + "," + resultsArray[i].grade + "," + resultsArray[i].room + "," + resultsArray[i].tlastname + "," + resultsArray[i].tfirstname,
+
+#R5 S[tudent]: <lastname> [B[us]]
+#check if input is for student lastname and bus route
+elif len(inputArray) == 3:
+    if inputArray[0] == "S:" or inputArray[0] == "Student:":
+        if inputArray[2] == "B" or inputArray[2] == "Bus":
+            studentLastName(resultsArray, studentList, inputArray) 
+            for i in range(0, len(resultsArray)):
+                print resultsArray[i].stlastname + "," + resultsArray[i].stfirstname + "," + resultsArray[i].bus,
+
 
 inputFile.close()
