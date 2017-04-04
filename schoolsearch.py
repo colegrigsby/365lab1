@@ -99,7 +99,7 @@ def runProg():
     #empty list to store each student
     studentList = []
     
-    # TRACE E1 if file doesn't exist 
+    # TRACE E1 if file doesn't exist
     #read through students.txt
     
     try:
@@ -164,7 +164,7 @@ def runProg():
             #R10 A[verage]: <number>
             elif inputArray[0] == "A:" or inputArray[0] == "Average:":
                 a = average(resultsArray, studentList, inputArray)
-                print inputArray[1] +":"+ str(a)
+                print inputArray[1] +": "+ str(a)
 	    
 			        
         #R5 S[tudent]: <lastname> [B[us]]

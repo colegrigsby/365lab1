@@ -300,7 +300,7 @@ Grade: 8 Low
 // TC-31
 // Tests Requirements R3, R10
 // short average gpa
-// expected output: 
+// expected output: 4: 2.95133333333
 
 
 A: 4
@@ -308,10 +308,11 @@ A: 4
 // TC-32
 // Tests Requirements R3, R10
 // long average gpa
-// expected output: 
+// expected output: 1: 2.995
 
 
-Average: 2
+Average: 1
+
 
 // TC-33
 // Tests Requirements R3, R10
@@ -326,7 +327,8 @@ A: 7
 // TC-34
 // Tests Requirements R3, R11
 // info short 
-// expected output: 0: 0
+// expected output: 
+// 0: 0
 // 1: 2
 // 2: 13
 // 3: 9
@@ -340,7 +342,8 @@ I
 // TC-35
 // Tests Requirements R3, R11
 // info long 
-// expected output: 0: 0
+// expected output: 
+// 0: 0
 // 1: 2
 // 2: 13
 // 3: 9
@@ -354,7 +357,7 @@ Info
 // TC-36
 // Tests Requirements E1
 // incorrect command 
-// expected output: return to prompt 
+// expected output: <return to prompt> 
 
 P: 27
 
@@ -363,7 +366,7 @@ Info
 // TC-37
 // Tests Requirements E1
 // incorrect command 
-// expected output: return to prompt 
+// expected output: <return to prompt> 
 
 Stud: COLE 
 
@@ -371,14 +374,14 @@ Stud: COLE
 // TC-38
 // Tests Requirements R3, R12
 // Quit short 
-// expected output:
+// expected output: <end> 
 
 Q
 
 // TC-39
 // Tests Requirements R3, R12
 // Quit long 
-// expected output:
+// expected output: <end> 
 
 
 Quit 
