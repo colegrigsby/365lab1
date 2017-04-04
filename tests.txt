@@ -4,7 +4,7 @@
 
 
 // TC-0 
-// Tests R1, R2 
+// Tests R1, R2, R13 
 //run program successfully on command line 
 
 python schoolsearch.py 
