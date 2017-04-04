@@ -121,7 +121,7 @@ def runProg():
     while True:
         userInput = raw_input("Please Enter Command: ")
 
-        inputArray = userInput.split(' ')
+        inputArray = userInput.split()
         
        	resultsArray = []
         if len(inputArray) == 1:
