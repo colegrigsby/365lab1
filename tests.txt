@@ -10,3 +10,109 @@
 
 
 
+// TC-1
+// Tests Requirements R3, R4 
+// short form existing 
+// expected output: WOOLERY,NOLAN,2,104,STEIB,GALE
+
+
+S:WOOLERY 
+
+
+
+// TC-2
+// Tests Requirements R3, R4  
+// long form existing 
+// expected output: SWEDLUND,SHARRI,3,107,FAFARD,ROCIO
+
+
+Student: SWEDLUND 
+
+
+// TC-3
+// Tests Requirements R3, R4  
+// long form none existing 
+// expected output: <empty line> 
+
+
+Student: GRIGSBY 
+
+
+// TC-4
+// Tests Requirements R3, R4  
+// short form none existing 
+// expected output: <empty line> 
+
+
+S: SHARMA 
+
+
+// TC-5
+// Tests Requirements R3, R5  
+// short form student with correct bus 
+// expected output:GUM,NOAH,54
+
+
+S: GUM 54  
+
+// TC-6
+// Tests Requirements R3, R5  
+// short form student with incorrect bus 
+// expected output: <empty line>
+
+
+S: GUM 22  
+
+
+// TC-7
+// Tests Requirements R3, R5  
+// long form student with correct bus 
+// expected output: DELUNA,KRYSTAL,53
+
+
+Student: DELUNA 53 
+
+// TC-8
+// Tests Requirements R3, R5  
+// long form student with incorrect bus 
+// expected output: <empty line> 
+
+
+Student: DELUNA 5
+
+// TC-9
+// Tests Requirements R3, R5  
+// short form student non existing 
+// expected output: <empty line> 
+
+
+S: SMITH 53 
+
+
+// TC-10
+// Tests Requirements R3, R6 
+// short form existing teacher (multiple)
+// expected output: 
+// RACANELLO,NOEL
+// CORONADO,DIMPLE
+// BOYTER,WAN
+// KEMERER,ROSETTA
+// DEMARTINI,DEWAYNE
+
+
+T: KERBS
+
+
+
+// TC-11
+// Tests Requirements R3, R6 
+// long form existing teacher (multiple)
+// expected output: 
+// BRODERSEN,HYE
+// THEUNISSEN,GRACE
+
+
+Teacher: ALPERT
+
+
+
