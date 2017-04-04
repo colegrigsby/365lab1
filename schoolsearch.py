@@ -45,6 +45,12 @@ def gradeNumber(results, students, inArr):
         if students[i].grade == inArr[1]:
             results.append(students[i])
 
+#function to search for same bus route
+def busRoute(results, students, inArr):
+    for i in range(0, len(students)):
+        if students[i].bus == inArr[1]:
+            results.append(students[i])
+
 #get user input commands
 while True:
     userInput = raw_input("Please Enter Command: ")
@@ -52,7 +58,11 @@ while True:
     inputArray = userInput.split(' ')
 
     resultsArray = []
-
+    if len(inputArray) == 1:
+        #R12 Q[uit]
+        #quit the current session
+        if inputArray[0] == "Q" or inputArray[0] == "Quit":
+            break
 
     if len(inputArray) == 2:
         #R4 S[tudent]: <lastname> 
@@ -73,6 +83,11 @@ while True:
             gradeNumber(resultsArray, studentList, inputArray)
             for i in range(0, len(resultsArray)):
                 print resultsArray[i].stlastname + "," + resultsArray[i].stfirstname
+        #R8 B[us]: <Number>
+        elif inputArray[0] == "B:" or inputArray[0] == "Bus:":
+            busRoute(resultsArray, studentList, inputArray)
+            for i in range(0, len(resultsArray)):
+                print resultsArray[i].stlastname + "," + resultsArray[i].stfirstname + "," + resultsArray[i].grade + "," + resultsArray[i].room
                 
     #R5 S[tudent]: <lastname> [B[us]]
     #check if input is for student lastname and bus route
