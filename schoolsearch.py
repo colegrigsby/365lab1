@@ -98,8 +98,14 @@ def info(results, students, inArr):
 def runProg():
     #empty list to store each student
     studentList = []
+    
+    # TRACE E1 if file doesn't exist 
     #read through students.txt
-    inputFile = open("students.txt", 'r')
+    
+    try:
+        inputFile = open("students.txt", 'r')
+    except:
+        return
     while True:
         line = inputFile.readline()
         if len(line) == 0:
