@@ -2,13 +2,12 @@
 // Cole Grigsby and Avi Sharma
 // Lab 1-1 test suite 
 
-//COPY PASTE 
-// TC-X 
-// Tests Requirements XXXX 
-// 
-// expected output: 
 
+// TC-0 
+// Tests R1, R2 
+//run program successfully on command line 
 
+python schoolsearch.py 
 
 // TC-1
 // Tests Requirements R3, R4 
@@ -135,7 +134,9 @@ T: KEEN
 // TC-14
 // Tests Requirements R3, R7 
 // short form grade (number only) 
-// expected output: GARTH,JOHN
+// expected output: 
+// SAELEE,DANILO
+// GARTH,JOHN
 
 
 G: 1
@@ -226,7 +227,7 @@ Bus: 26
 // TC-22
 // Tests Requirements R3, R9
 // short HL grade 
-// expected output: 
+// expected output: SWEDLUND,SHARRI,3.24,FAFARD,ROCIO,55
 
 
 G: 3 H 
@@ -234,8 +235,7 @@ G: 3 H
 // TC-23
 // Tests Requirements R3, R9
 // short HL grade 
-// expected output: 
-
+// expected output: KOZOLA,BUSTER,2.76,HAMER,GAVIN,55
 
 G: 2 L
 
@@ -243,7 +243,7 @@ G: 2 L
 // TC-24
 // Tests Requirements R3, R9
 // short high/low grade 
-// expected output: 
+// expected output: SWEDLUND,SHARRI,3.24,FAFARD,ROCIO,55
 
 
 G: 3 High 
@@ -251,7 +251,7 @@ G: 3 High
 // TC-25
 // Tests Requirements R3, R9
 // short high/low grade 
-// expected output: 
+// expected output: KOZOLA,BUSTER,2.76,HAMER,GAVIN,55
 
 
 G: 2 Low
@@ -260,7 +260,7 @@ G: 2 Low
 // TC-26
 // Tests Requirements R3, R9
 // long HL grade 
-// expected output: 
+// expected output: CORKER,CARTER,3.12,HANTZ,JED,53
 
 
 Grade: 4 H
@@ -268,7 +268,7 @@ Grade: 4 H
 // TC-27
 // Tests Requirements R3, R9
 // long HL grade 
-// expected output: 
+// expected output: IMMERMAN,DEVIN,2.78,HANTZ,JED,52
 
 
 Grade: 4 L
@@ -276,7 +276,7 @@ Grade: 4 L
 // TC-28
 // Tests Requirements R3, R9
 // long high/low grade 
-// expected output: 
+// expected output: CORKER,CARTER,3.12,HANTZ,JED,53
 
 
 Grade: 4 High
@@ -284,7 +284,8 @@ Grade: 4 High
 // TC-29
 // Tests Requirements R3, R9
 // long high/low grade 
-// expected output: 
+// expected output: IMMERMAN,DEVIN,2.78,HANTZ,JED,52
+
 
 
 Grade: 4 Low
@@ -292,7 +293,7 @@ Grade: 4 Low
 // TC-30
 // Tests Requirements R3, R9
 // long high/low nonexistent grade 
-// expected output: 
+// expected output: <empty line> 
 
 
 Grade: 8 Low

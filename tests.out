@@ -1,0 +1,113 @@
+script started, output file is tests.out
+bash-3.2$ python schoolsearch.py 
+Please Enter Command: S: WOOLERY
+WOOLERY,NOLAN,2,104,STEIB,GALE
+Please Enter Command: Student: SWEDLUND
+SWEDLUND,SHARRI,3,107,FAFARD,ROCIO
+Please Enter Command: Student: GRIGSBY 
+Please Enter Command: S: SHARMA
+Please Enter Command: S: GUM B
+GUM,NOAH,54
+Please Enter Command: S: GUM Bus
+GUM,NOAH,54
+Please Enter Command: Student: DELUNA B
+DELUNA,KRYSTAL,53
+Please Enter Command: Student: DELUNA Bus
+DELUNA,KRYSTAL,53
+Please Enter Command: S: SMITH B
+Please Enter Command: T: KERBS
+RACANELLO,NOEL
+CORONADO,DIMPLE
+BOYTER,WAN
+KEMERER,ROSETTA
+DEMARTINI,DEWAYNE
+Please Enter Command: Teacher: ALPERT
+BRODERSEN,HYE
+THEUNISSEN,GRACE
+Please Enter Command: Teacher: DEKHTYAR
+Please Enter Command: T: KEEN
+Please Enter Command: G: 1
+SAELEE,DANILO
+GARTH,JOHN
+Please Enter Command: Grade: 4
+CORKER,CARTER
+IMMERMAN,DEVIN
+RAPOSE,ALONZO
+WORBINGTON,DEEDRA
+OGAS,ERVIN
+SPANICEK,KENDRA
+GUICE,CODI
+GLOR,HUNG
+GUM,NOAH
+MASSART,ELDON
+NOVICK,ROLLAND
+DURAND,CARLEE
+BEX,TAMESHA
+DELUNA,KRYSTAL
+COMO,ZANDRA
+Please Enter Command: G: 7
+Please Enter Command: Grade: 9
+Please Enter Command: B: 56
+RACANELLO,NOEL,6,102
+VILARDO,EMMANUEL,2,104
+KRAKE,VALENTIN,6,109
+BEAN,INGER,6,111
+BUSSMANN,BILLY,2,108
+FEYEREISEN,WILFREDO,6,111
+Please Enter Command: Bus: 0
+SCHOENECKER,PHUONG,6,109
+FINCHMAN,MATHILDA,6,111
+BRODERSEN,HYE,3,110
+HAVIR,BOBBIE,2,108
+MASSART,ELDON,4,105
+GARTH,JOHN,1,103
+CREMEANS,RANDOLPH,6,109
+KREESE,CARRIE,6,109
+Please Enter Command: B: 25
+Please Enter Command: Bus: 26
+Please Enter Command: G: 3 H
+SWEDLUND,SHARRI,3.24,FAFARD,ROCIO,55
+Please Enter Command: G: 2 L
+KOZOLA,BUSTER,2.76,HAMER,GAVIN,55
+Please Enter Command: G: 3 High 
+SWEDLUND,SHARRI,3.24,FAFARD,ROCIO,55
+Please Enter Command: G: 2 Low
+KOZOLA,BUSTER,2.76,HAMER,GAVIN,55
+Please Enter Command: Grade: 4 H
+CORKER,CARTER,3.12,HANTZ,JED,53
+Please Enter Command: Grade: 4 L
+IMMERMAN,DEVIN,2.78,HANTZ,JED,52
+Please Enter Command: Grade: 4 High
+CORKER,CARTER,3.12,HANTZ,JED,53
+Please Enter Command: Grade: 4 Low
+IMMERMAN,DEVIN,2.78,HANTZ,JED,52
+Please Enter Command: Grade: 8 Low 
+Please Enter Command: A: 4
+4: 2.95133333333
+Please Enter Command: Average: 1
+1: 2.995
+Please Enter Command: A: 7
+7: 0
+Please Enter Command: I
+0: 0
+1: 2
+2: 13
+3: 9
+4: 15
+5: 0
+6: 21
+Please Enter Command: Info
+0: 0
+1: 2
+2: 13
+3: 9
+4: 15
+5: 0
+6: 21
+Please Enter Command: P: 27
+Please Enter Command: Stud: COLE
+Please Enter Command: Q
+bash-3.2$ python schoolsearch.py 
+Please Enter Command: Quit
+bash-3.2$ exit
+

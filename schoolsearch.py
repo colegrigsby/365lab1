@@ -50,25 +50,28 @@ def busRoute(results, students, inArr):
 
 # Traceability: implements requirements R3, R9
 
-#function to search for the highest student in a grade 
-def gradeTop(results, students, inArr): 
-	gradeNumber(results, students, inArr)
-	max = students[0] 
-	for s in students: 
-		if s.gpa > max.gpa: 
-			max = s	
-	results = [max]
-
-# Traceability: implements requirements R3, R9
-
-#function to search for the lowest student GPA in a grade 
+#function to search for the highest student in a grade
 def gradeTop(results, students, inArr):
     gradeNumber(results, students, inArr)
-    min = students[0]
-    for s in results:
-        if float(s.gpa) < float(min.gpa):
-            min = s
-    results = [min]
+    if len(results) > 0:
+        max = results[0]
+        for s in results:
+            if float(s.gpa) > float(max.gpa):
+                max = s
+        return max
+
+# Traceability: implements requirements R3, R9
+#function to search for the lowest student GPA in a grade
+def gradeLow(results, students, inArr):
+    gradeNumber(results, students, inArr)
+    if len(results) > 0:
+        min = results[0]
+        for s in results:
+            if float(s.gpa) < float(min.gpa):
+                min = s
+        return min
+
+
 
 # Traceability: implements requirements R3, R10
 
@@ -175,6 +178,19 @@ def runProg():
                     studentLastName(resultsArray, studentList, inputArray) 
                     for r in resultsArray:
                         print r.stlastname + "," + r.stfirstname + "," + r.bus
+            #R9 G[rade]: <Number>
+            elif inputArray[0] == "G:" or inputArray[0] == "Grade:":
+                #R9 G[rade]: <Number> H[igh]
+                if inputArray[2] == "H" or inputArray[2] == "High":
+                    r = gradeTop(resultsArray, studentList, inputArray)
+                    if r is not None:
+                        print r.stlastname + "," + r.stfirstname + "," + r.gpa + "," + r.tlastname + "," + r.tfirstname[:-1] + "," + r.bus
+                elif inputArray[2] == "L" or inputArray[2] == "Low":
+                    r = gradeLow(resultsArray, studentList, inputArray)
+                    if r is not None:
+                        print r.stlastname + "," + r.stfirstname + "," + r.gpa + "," + r.tlastname + "," + r.tfirstname[:-1] + "," + r.bus
+
+
 
 
 # Traceability: implements requirements R1, R2
