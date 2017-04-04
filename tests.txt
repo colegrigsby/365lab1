@@ -16,7 +16,7 @@
 // expected output: WOOLERY,NOLAN,2,104,STEIB,GALE
 
 
-S:WOOLERY 
+S: WOOLERY 
 
 
 
@@ -49,44 +49,44 @@ S: SHARMA
 
 // TC-5
 // Tests Requirements R3, R5  
-// short form student with correct bus 
+// short form student with short bus 
 // expected output:GUM,NOAH,54
 
 
-S: GUM 54  
+S: GUM B 
 
 // TC-6
 // Tests Requirements R3, R5  
-// short form student with incorrect bus 
-// expected output: <empty line>
+// short form student with long
+// expected output: GUM,NOAH,54
 
 
-S: GUM 22  
+S: GUM Bus  
 
 
 // TC-7
 // Tests Requirements R3, R5  
-// long form student with correct bus 
+// long form student with short bus 
 // expected output: DELUNA,KRYSTAL,53
 
 
-Student: DELUNA 53 
+Student: DELUNA B
 
 // TC-8
 // Tests Requirements R3, R5  
-// long form student with incorrect bus 
-// expected output: <empty line> 
+// long form student with long bus
+// expected output: DELUNA,KRYSTAL,53 
 
 
-Student: DELUNA 5
+Student: DELUNA Bus
 
 // TC-9
 // Tests Requirements R3, R5  
-// short form student non existing 
+// short form student non existing with bus
 // expected output: <empty line> 
 
 
-S: SMITH 53 
+S: SMITH B
 
 
 // TC-10
@@ -115,4 +115,271 @@ T: KERBS
 Teacher: ALPERT
 
 
+// TC-12
+// Tests Requirements R3, R6 
+// long form nonexistent teacher
+// expected output: <empty line> 
+
+
+Teacher: DEKHTYAR
+
+// TC-13
+// Tests Requirements R3, R6 
+// short form nonexistent teacher
+// expected output: <empty line> 
+
+
+T: KEEN
+
+
+// TC-14
+// Tests Requirements R3, R7 
+// short form grade (number only) 
+// expected output: GARTH,JOHN
+
+
+G: 1
+
+
+
+// TC-15
+// Tests Requirements R3, R7 
+// long form grade (number only) 
+// expected output:
+// CORKER,CARTER
+// IMMERMAN,DEVIN
+// RAPOSE,ALONZO
+// WORBINGTON,DEEDRA
+// OGAS,ERVIN
+// SPANICEK,KENDRA
+// GUICE,CODI
+// GLOR,HUNG
+// GUM,NOAH
+// MASSART,ELDON
+// NOVICK,ROLLAND
+// DURAND,CARLEE
+// BEX,TAMESHA
+// DELUNA,KRYSTAL
+// COMO,ZANDRA 
+
+
+Grade: 4
+
+// TC-16
+// Tests Requirements R3, R7 
+// short form grade (nonexistent) 
+// expected output: <empty line> 
+
+G: 7
+
+// TC-17
+// Tests Requirements R3, R7 
+// long form grade (nonexistent) 
+// expected output: <empty line> 
+
+Grade: 9
+
+// TC-18
+// Tests Requirements R3, R8
+// short form bus (multiple existing) 
+// expected output:
+// RACANELLO,NOEL,6,102
+// VILARDO,EMMANUEL,2,104
+// KRAKE,VALENTIN,6,109
+// BEAN,INGER,6,111
+// BUSSMAN,BILLY,2,108
+// FEYEREISEN,WILFREDO,6,111
+
+B: 56
+
+// TC-19
+// Tests Requirements R3, R8
+// short form bus (multiple existing) 
+// expected output: 
+// SCHONECKER,PHUONG,6,109
+// FINCHMAN,MATHILDA,6,111
+// BRODERSON,HYE,3,110
+// HAVIR,BOBBY,2,108
+// MASSART,ELDON,4,105
+// GARTH,JOHN,1,103
+// CREMEANS,RANDOLPH,6,109
+// KREESE,CARRIE,6,109 
+
+Bus: 0
+
+// TC-20
+// Tests Requirements R3, R8
+// short form bus (nonxistent) 
+// expected output: <empty line> 
+
+
+B: 25
+
+// TC-21
+// Tests Requirements R3, R8
+// long form bus (nonxistent) 
+// expected output: <empty line> 
+
+
+Bus: 26
+
+// TC-22
+// Tests Requirements R3, R9
+// short HL grade 
+// expected output: 
+
+
+G: 3 H 
+
+// TC-23
+// Tests Requirements R3, R9
+// short HL grade 
+// expected output: 
+
+
+G: 2 L
+
+
+// TC-24
+// Tests Requirements R3, R9
+// short high/low grade 
+// expected output: 
+
+
+G: 3 High 
+
+// TC-25
+// Tests Requirements R3, R9
+// short high/low grade 
+// expected output: 
+
+
+G: 2 Low
+
+
+// TC-26
+// Tests Requirements R3, R9
+// long HL grade 
+// expected output: 
+
+
+Grade: 4 H
+
+// TC-27
+// Tests Requirements R3, R9
+// long HL grade 
+// expected output: 
+
+
+Grade: 4 L
+
+// TC-28
+// Tests Requirements R3, R9
+// long high/low grade 
+// expected output: 
+
+
+Grade: 4 High
+
+// TC-29
+// Tests Requirements R3, R9
+// long high/low grade 
+// expected output: 
+
+
+Grade: 4 Low
+
+// TC-30
+// Tests Requirements R3, R9
+// long high/low nonexistent grade 
+// expected output: 
+
+
+Grade: 8 Low
+
+// TC-31
+// Tests Requirements R3, R10
+// short average gpa
+// expected output: 
+
+
+A: 4
+
+// TC-32
+// Tests Requirements R3, R10
+// long average gpa
+// expected output: 
+
+
+Average: 2
+
+// TC-33
+// Tests Requirements R3, R10
+// average gpa wrong grade
+// expected output: <empty line> 
+
+
+A: 7
+
+
+
+// TC-34
+// Tests Requirements R3, R11
+// info short 
+// expected output: 0: 0
+// 1: 2
+// 2: 13
+// 3: 9
+// 4: 15
+// 5: 0
+// 6: 21
+
+
+I 
+
+// TC-35
+// Tests Requirements R3, R11
+// info long 
+// expected output: 0: 0
+// 1: 2
+// 2: 13
+// 3: 9
+// 4: 15
+// 5: 0
+// 6: 21
+
+
+Info 
+
+// TC-36
+// Tests Requirements E1
+// incorrect command 
+// expected output: return to prompt 
+
+P: 27
+
+Info 
+
+// TC-37
+// Tests Requirements E1
+// incorrect command 
+// expected output: return to prompt 
+
+Stud: COLE 
+
+
+// TC-38
+// Tests Requirements R3, R12
+// Quit short 
+// expected output:
+
+Q
+
+// TC-39
+// Tests Requirements R3, R12
+// Quit long 
+// expected output:
+
+
+Quit 
 
