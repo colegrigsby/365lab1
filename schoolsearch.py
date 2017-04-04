@@ -27,13 +27,6 @@ while True:
     #add data to list
     studentList.append(Student(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7]))
 
-#get user input commands
-userInput = raw_input("Enter command ")
-
-inputArray = userInput.split(' ')
-
-resultsArray = []
-
 #function to search for student last name
 def studentLastName(results, students, inArr):
     for i in range(0, len(students)):
@@ -46,29 +39,49 @@ def teacherLastName(results, students, inArr):
         if students[i].tlastname == inArr[1]:
             results.append(students[i])
 
-if len(inputArray) == 2:
-    #R4 S[tudent]: <lastname> 
-    #check if input is for student lastname
-    if inputArray[0] == "S:" or inputArray[0] == "Student:":
-        studentLastName(resultsArray, studentList, inputArray)
-        for i in range(0, len(resultsArray)):
-            print resultsArray[i].stlastname + "," + resultsArray[i].stfirstname + "," + resultsArray[i].grade + "," + resultsArray[i].room + "," + resultsArray[i].tlastname + "," + resultsArray[i].tfirstname,
-    #R6 T[eacher]: <lastname>
-    #check if input is for teacher lastname
-    elif inputArray[0] == "T:" or inputArray[0] == "Teacher:":
-        teacherLastName(resultsArray, studentList, inputArray)
-        print len(resultsArray)
-        for i in range(0, len(resultsArray)):
-            print resultsArray[i].stlastname + "," + resultsArray[i].stfirstname
-    
-#R5 S[tudent]: <lastname> [B[us]]
-#check if input is for student lastname and bus route
-elif len(inputArray) == 3:
-    if inputArray[0] == "S:" or inputArray[0] == "Student:":
-        if inputArray[2] == "B" or inputArray[2] == "Bus":
-            studentLastName(resultsArray, studentList, inputArray) 
+#function to search for same grade (0-6)
+def gradeNumber(results, students, inArr):
+    for i in range(0, len(students)):
+        if students[i].grade == inArr[1]:
+            results.append(students[i])
+
+#get user input commands
+while True:
+    userInput = raw_input("Please Enter Command: ")
+
+    inputArray = userInput.split(' ')
+
+    resultsArray = []
+
+
+    if len(inputArray) == 2:
+        #R4 S[tudent]: <lastname> 
+        #check if input is for student lastname
+        if inputArray[0] == "S:" or inputArray[0] == "Student:":
+            studentLastName(resultsArray, studentList, inputArray)
             for i in range(0, len(resultsArray)):
-                print resultsArray[i].stlastname + "," + resultsArray[i].stfirstname + "," + resultsArray[i].bus,
+                print resultsArray[i].stlastname + "," + resultsArray[i].stfirstname + "," + resultsArray[i].grade + "," + resultsArray[i].room + "," + resultsArray[i].tlastname + "," + resultsArray[i].tfirstname,
+        #R6 T[eacher]: <lastname>
+        #check if input is for teacher lastname
+        elif inputArray[0] == "T:" or inputArray[0] == "Teacher:":
+            teacherLastName(resultsArray, studentList, inputArray)
+            for i in range(0, len(resultsArray)):
+                print resultsArray[i].stlastname + "," + resultsArray[i].stfirstname
+        #R7 G[rade]: <Number>
+        #check if input is for grade number
+        elif inputArray[0] == "G:" or inputArray[0] == "Grade:":
+            gradeNumber(resultsArray, studentList, inputArray)
+            for i in range(0, len(resultsArray)):
+                print resultsArray[i].stlastname + "," + resultsArray[i].stfirstname
+                
+    #R5 S[tudent]: <lastname> [B[us]]
+    #check if input is for student lastname and bus route
+    elif len(inputArray) == 3:
+        if inputArray[0] == "S:" or inputArray[0] == "Student:":
+            if inputArray[2] == "B" or inputArray[2] == "Bus":
+                studentLastName(resultsArray, studentList, inputArray) 
+                for i in range(0, len(resultsArray)):
+                    print resultsArray[i].stlastname + "," + resultsArray[i].stfirstname + "," + resultsArray[i].bus,
 
 
 inputFile.close()
