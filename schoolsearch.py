@@ -39,15 +39,28 @@ def studentLastName(results, students, inArr):
     for i in range(0, len(students)):
         if students[i].stlastname == inArr[1]:
             results.append(students[i])
-            
-#R4 S[tudent]: <lastname> 
-#check if input is for student lastname
+
+#function to search for teacher last name
+def teacherLastName(results, students, inArr):
+    for i in range(0, len(students)):
+        if students[i].tlastname == inArr[1]:
+            results.append(students[i])
+
 if len(inputArray) == 2:
+    #R4 S[tudent]: <lastname> 
+    #check if input is for student lastname
     if inputArray[0] == "S:" or inputArray[0] == "Student:":
         studentLastName(resultsArray, studentList, inputArray)
         for i in range(0, len(resultsArray)):
             print resultsArray[i].stlastname + "," + resultsArray[i].stfirstname + "," + resultsArray[i].grade + "," + resultsArray[i].room + "," + resultsArray[i].tlastname + "," + resultsArray[i].tfirstname,
-
+    #R6 T[eacher]: <lastname>
+    #check if input is for teacher lastname
+    elif inputArray[0] == "T:" or inputArray[0] == "Teacher:":
+        teacherLastName(resultsArray, studentList, inputArray)
+        print len(resultsArray)
+        for i in range(0, len(resultsArray)):
+            print resultsArray[i].stlastname + "," + resultsArray[i].stfirstname
+    
 #R5 S[tudent]: <lastname> [B[us]]
 #check if input is for student lastname and bus route
 elif len(inputArray) == 3:
