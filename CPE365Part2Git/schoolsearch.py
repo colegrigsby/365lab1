@@ -112,6 +112,49 @@ def info(results, students, inArr):
         gradeNumber(r, students, [0, str(g)])
         results.append(len(r))
 
+# Traceability: implements requirement NR1
+
+# method to list all students from a classroom
+def classRoomStudents(results, students, inArr):
+    for s in students:
+        if s.room == inArr[1]:
+            results.append(s)
+
+
+# Traceability: implements requirement NR2
+
+# method to list all teachers from a classroom
+def classRoomTeachers(results, teachers, inArr):
+    for t in teachers:
+        if t.room == inArr[1]:
+            results.append(t)
+
+# Traceability: implements requirement NR3
+
+# method to list all students from a classroom
+def gradeTeachers(results, teachers, inArr):
+    for t in teachers:
+        if t.grade == inArr[1]:
+            results.append(t)
+
+# Traceability: implements requirement NR4
+
+# method to list all students from a classroom
+def classRoom(results, students, inArr):
+    #Todo make a list of the enrollment numbers for room
+    dict = {}
+    for s in students:
+        if dict.has_key(s.room):
+            dict[s.room] = dict[s.room] + 1
+        else:
+            dict[s.room] = 1
+    results = dict
+
+
+
+
+
+
 # Traceability: implements requirements R3 through R13, E1
 
 #get user input commands
@@ -136,7 +179,7 @@ def runProg():
         
         if len(line1) == 0:
             break
-        data1 = line1.split(',')
+        data1 = line1.replace(" ", "").split(',')
         
         #add data to list
         studentList.append(Student(data1[0],data1[1],data1[2],data1[3],data1[4],data1[5].rstrip('\n')))
@@ -148,7 +191,7 @@ def runProg():
             break
 
         #MAKE SURE THIS IS RIGHT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        data2 = line2.split(', ')
+        data2 = line2.replace(" ", "").split(',')
         
         #add data to list
         teacherList.append(Teacher(data2[0],data2[1],data2[2].rstrip('\n')))
