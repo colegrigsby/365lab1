@@ -149,7 +149,57 @@ def classrooms(results, students, inArr):
     results = dict
 
 
+# Traceability: implements requirement NR5
 
+# method to get the average student gpa based on grade level
+
+# TODO step through grade levels, get average gpa and count of students per category
+
+def gradeAverages(results, students):
+    for i in range(0,7):
+        r = []
+        a = average(r, students, [0,i])
+        l = len(results)
+        results.append((a,l))
+
+
+# Traceability: implements requirement NR5
+
+# method to get the average student gpa based on teachers
+
+def teacherAverages(results, students, teachers):
+    tdict = {}
+    for t in teachers:
+        if not tdict.has_key(t.lastname):
+            t[t.lastname] = ()
+    for ln in t.keys():
+        r = []
+        teacherLastName([], r, students, teachers, [0, ln])
+        sum = 0
+        ls = len(r)
+        for s in r:
+            sum += float(s.gpa)
+        t[ln] = (sum, ls)
+
+
+
+# Traceability: implements requirement NR5
+
+# method to get the average student gpa based on bus routes
+
+def busrouteAverages(results, students, teachers):
+    tdict = {}
+    for s in students:
+        if not tdict.has_key(s.bus):
+            t[s.bus] = ()
+    for b in t.keys():
+        r = []
+        busRoute(r, students, [0, b])
+        sum = 0
+        ls = len(r)
+        for s in r:
+            sum += float(s.gpa)
+        t[b] = (sum, ls)
 
 
 
@@ -218,6 +268,14 @@ def runProg():
                 for (room, students) in resultsArray.items():
                     print room + ": " + str(students)
             
+        
+            #NR5
+            
+            #GA or GradeAverage
+            
+            #TA or TeacherAverage
+            
+            #BA or BusAverage
         
         
             #R12 Q[uit]
@@ -302,9 +360,7 @@ def runProg():
                 elif inputArray[2] == "T" or inputArray[2] == "Teacher":
                     classroom(resultsArray, teacherList, inputArray)
                     for t in resultsArray:
-                        print t.tlastname + "," + t.tfirstname                
-
-
+                        print t.tlastname + "," + t.tfirstname
 
 # Traceability: implements requirements R1, R2
 
