@@ -391,8 +391,133 @@ Quit
 // Tests Requirements NR1
 // Class Students short existing 
 // expected output:  
+// COOKUS,XUAN
+// ELHADDAD,SHANTE
+// SWEDLUND,SHARRI
+// CIGANEK,MANIE
+// COVINGTON,TOMAS
+// EARLY,TORY
+// LINHART,LELA
 
+C: 107 S
 
-CS: 
+// TC-41
+// Tests Requirements NR1
+// Class Students short existing 
+// expected output:  
+// WORBINGTON,DEEDRA
+// SPANICEK,KENDRA
+// GUICE,CODI
+// GLOR,HUNG
+// GUM,NOAH
+// NOVICK,ROLLAND
+// DELUNA,KRYSTAL
+// COMO,ZANDRA
 
+C: 112 Student
 
+// TC-42
+// Tests Requirements NR1
+// Class Students short existing 
+// expected output:  
+// WORBINGTON,DEEDRA
+// LIBRANDI,TODD
+// HAVIR,BOBBIE
+// SARAO,DIEDRA
+// VANCOTT,MIKE
+// WICINSKY,TERESE
+// KOZOLA,BUSTER
+// MULLINGS,LEIGHANN
+// BUSSMANN,BILLY
+// BERBES,DICK
+// MULGREW,RANDELL
+// TOWLEY,LANE
+
+Class: 108 Student
+
+// TC-43
+// Tests Requirements NR1
+// Class Students short existing 
+// expected output:  
+// WORBINGTON,DEEDRA
+// LIBRANDI,TODD
+// HAVIR,BOBBIE
+// SARAO,DIEDRA
+// VANCOTT,MIKE
+// WICINSKY,TERESE
+// KOZOLA,BUSTER
+// MULLINGS,LEIGHANN
+// BUSSMANN,BILLY
+// BERBES,DICK
+// MULGREW,RANDELL
+// TOWLEY,LANE
+
+Class: 108 S
+
+// TC-44
+// Tests Requirements NR2
+// Given class, find teacher or teachers teaching it 
+// expected output:  
+// CHIONCHIO,PERLA
+
+C: 112 T
+
+// TC-45
+// Tests Requirements NR2
+// Given class, find teacher or teachers teaching it 
+// expected output:  
+// FALKER,ADOLPH
+
+C: 103 Teacher
+
+// TC-46
+// Tests Requirements NR2
+// Given class, find teacher or teachers teaching it 
+// expected output:  
+// HANTZ,JED
+
+Class: 105 T
+
+// TC-47
+// Tests Requirements NR2
+// Given class, find teacher or teachers teaching it 
+// expected output:  
+// BODZIONY,LUZ
+
+Class: 106 Teacher
+
+// TC-48
+// Tests Requirements NR3
+// Given a grade, find all teachers who teach it
+// expected output:  
+// COOL,REUBEN
+// HANTZ,JED
+// CHIONCHIO,PERLA
+
+G: 4 T
+
+// TC-49
+// Tests Requirements NR3
+// Given a grade, find all teachers who teach it
+// No fifth grade teachers
+// expected output:  <empty line>
+
+G: 5 Teacher
+
+// TC-50
+// Tests Requirements NR3
+// Given a grade, find all teachers who teach it
+// expected output:
+// FAFARD,ROCIO
+// ALPERT,JONATHAN
+
+Grade: 3 T
+
+// TC-50
+// Tests Requirements NR3
+// Given a grade, find all teachers who teach it
+// expected output:
+// STEIB,GALE
+// HAMER,GAVIN
+
+Grade: 2 Teacher

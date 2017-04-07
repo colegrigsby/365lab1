@@ -114,7 +114,7 @@ def info(results, students, inArr):
 
 # Traceability: implements requirement NR1, NR2
 
-# method to list all students from a classroom
+# function to list all students/teachers from a classroom
 def classroom(results, subjects, inArr):
     for s in subjects:
         if s.room == inArr[1]:
@@ -123,11 +123,17 @@ def classroom(results, subjects, inArr):
 
 # Traceability: implements requirement NR3
 
-# method to list all students from a classroom
-def gradeTeachers(results, teachers, inArr):
-    for t in teachers:
-        if t.grade == inArr[1]:
-            results.append(t)
+# function to list all teachers of a grade
+def gradeTeachers(teachResults, results, students, teachers, inArr):
+    for s in students:
+        if s.grade == inArr[1]:
+            results.append(s)
+    results = list(set([r.room for r in results]))
+    results.sort()
+    for room in results:
+        for t in teachers:
+            if room == t.room:
+                teachResults.append(t)
 
 # Traceability: implements requirement NR4
 
@@ -255,26 +261,8 @@ def runProg():
                 a = average(resultsArray, studentList, inputArray)
                 print inputArray[1] +": "+ str(a)
 
-            #NR1 CS classroom students
-            elif inputArray[0] == "CS:" or inputArray[0] == "Class Students:":
-                classroom(resultsArray, studentList, inputArray)
-                for r in resultsArray:
-                    print r.stlastname + "," + r.stfirstname
-                        
-            #NR2 CT Classroom teachers
-            elif inputArray[0] == "CT:" or inputArray[0] == "Class Teachers:":
-                classroom(resultsArray, teacherList, inputArray)
-                for r in resultsArray:
-                    print r.stlastname + "," + r.stfirstname
-
-            #NR3 GT grade teachers
-            elif inputArray[0] == "GT:" or inputArray[0] == "Grade Teachers:":
-                gradeTeachers(resultsArray, teacherList, inputArray)
-                    for r in resultsArray:
-                        print r.stlastname + "," + r.stfirstname
+            
                             
-
-
         #R5 S[tudent]: <lastname> [B[us]]
         #check if input is for student lastname and bus route
         elif len(inputArray) == 3:
@@ -291,12 +279,30 @@ def runProg():
                     if r is not None:
                         for t in teachResultsArray:
                             print r.stlastname + "," + r.stfirstname + "," + r.gpa + "," + t.tlastname + "," + t.tfirstname[:-1] + "," + r.bus
+                #R9 G[rade]: <Number> L[ow]
                 elif inputArray[2] == "L" or inputArray[2] == "Low":
                     r = gradeLow(teachResultsArray, resultsArray, studentList, teacherList, inputArray)
                     if r is not None:
                         for t in teachResultsArray:
                             print r.stlastname + "," + r.stfirstname + "," + r.gpa + "," + t.tlastname + "," + t.tfirstname[:-1] + "," + r.bus
-
+                #NR3 G[rade]: <number> T[eacher]
+                elif inputArray[2] == "T" or inputArray[2] == "Teacher":
+                    gradeTeachers(teachResultsArray, resultsArray, studentList, teacherList, inputArray)
+                    for t in teachResultsArray:
+                        print t.tlastname + "," + t.tfirstname
+            
+            elif inputArray[0] == "C:" or inputArray[0] == "Class:":
+                #NR1 C[lass]: <number> S[tudent]
+                if inputArray[2] == "S" or inputArray[2] == "Student":
+                    classroom(resultsArray, studentList, inputArray)
+                    for r in resultsArray:
+                        print r.stlastname + "," + r.stfirstname
+                        
+                #NR2 C[lass]: <number> T[eacher]
+                elif inputArray[2] == "T" or inputArray[2] == "Teacher":
+                    classroom(resultsArray, teacherList, inputArray)
+                    for t in resultsArray:
+                        print t.tlastname + "," + t.tfirstname                
 
 
 
