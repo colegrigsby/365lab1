@@ -1,0 +1,398 @@
+//CSC 365 Spring 2017
+// Cole Grigsby and Avi Sharma
+// Lab 1-1 test suite 
+
+
+// TC-0 
+// Tests R1, R2, R13 
+//run program successfully on command line 
+
+python schoolsearch.py 
+
+// TC-1
+// Tests Requirements R3, R4 
+// short form existing 
+// expected output: WOOLERY,NOLAN,2,104,STEIB,GALE
+
+
+S: WOOLERY 
+
+
+
+// TC-2
+// Tests Requirements R3, R4  
+// long form existing 
+// expected output: SWEDLUND,SHARRI,3,107,FAFARD,ROCIO
+
+
+Student: SWEDLUND 
+
+
+// TC-3
+// Tests Requirements R3, R4  
+// long form none existing 
+// expected output: <empty line> 
+
+
+Student: GRIGSBY 
+
+
+// TC-4
+// Tests Requirements R3, R4  
+// short form none existing 
+// expected output: <empty line> 
+
+
+S: SHARMA 
+
+
+// TC-5
+// Tests Requirements R3, R5  
+// short form student with short bus 
+// expected output:GUM,NOAH,54
+
+
+S: GUM B 
+
+// TC-6
+// Tests Requirements R3, R5  
+// short form student with long
+// expected output: GUM,NOAH,54
+
+
+S: GUM Bus  
+
+
+// TC-7
+// Tests Requirements R3, R5  
+// long form student with short bus 
+// expected output: DELUNA,KRYSTAL,53
+
+
+Student: DELUNA B
+
+// TC-8
+// Tests Requirements R3, R5  
+// long form student with long bus
+// expected output: DELUNA,KRYSTAL,53 
+
+
+Student: DELUNA Bus
+
+// TC-9
+// Tests Requirements R3, R5  
+// short form student non existing with bus
+// expected output: <empty line> 
+
+
+S: SMITH B
+
+
+// TC-10
+// Tests Requirements R3, R6 
+// short form existing teacher (multiple)
+// expected output: 
+// RACANELLO,NOEL
+// CORONADO,DIMPLE
+// BOYTER,WAN
+// KEMERER,ROSETTA
+// DEMARTINI,DEWAYNE
+
+
+T: KERBS
+
+
+
+// TC-11
+// Tests Requirements R3, R6 
+// long form existing teacher (multiple)
+// expected output: 
+// BRODERSEN,HYE
+// THEUNISSEN,GRACE
+
+
+Teacher: ALPERT
+
+
+// TC-12
+// Tests Requirements R3, R6 
+// long form nonexistent teacher
+// expected output: <empty line> 
+
+
+Teacher: DEKHTYAR
+
+// TC-13
+// Tests Requirements R3, R6 
+// short form nonexistent teacher
+// expected output: <empty line> 
+
+
+T: KEEN
+
+
+// TC-14
+// Tests Requirements R3, R7 
+// short form grade (number only) 
+// expected output: 
+// SAELEE,DANILO
+// GARTH,JOHN
+
+
+G: 1
+
+
+
+// TC-15
+// Tests Requirements R3, R7 
+// long form grade (number only) 
+// expected output:
+// CORKER,CARTER
+// IMMERMAN,DEVIN
+// RAPOSE,ALONZO
+// WORBINGTON,DEEDRA
+// OGAS,ERVIN
+// SPANICEK,KENDRA
+// GUICE,CODI
+// GLOR,HUNG
+// GUM,NOAH
+// MASSART,ELDON
+// NOVICK,ROLLAND
+// DURAND,CARLEE
+// BEX,TAMESHA
+// DELUNA,KRYSTAL
+// COMO,ZANDRA 
+
+
+Grade: 4
+
+// TC-16
+// Tests Requirements R3, R7 
+// short form grade (nonexistent) 
+// expected output: <empty line> 
+
+G: 7
+
+// TC-17
+// Tests Requirements R3, R7 
+// long form grade (nonexistent) 
+// expected output: <empty line> 
+
+Grade: 9
+
+// TC-18
+// Tests Requirements R3, R8
+// short form bus (multiple existing) 
+// expected output:
+// RACANELLO,NOEL,6,102
+// VILARDO,EMMANUEL,2,104
+// KRAKE,VALENTIN,6,109
+// BEAN,INGER,6,111
+// BUSSMAN,BILLY,2,108
+// FEYEREISEN,WILFREDO,6,111
+
+B: 56
+
+// TC-19
+// Tests Requirements R3, R8
+// short form bus (multiple existing) 
+// expected output: 
+// SCHONECKER,PHUONG,6,109
+// FINCHMAN,MATHILDA,6,111
+// BRODERSON,HYE,3,110
+// HAVIR,BOBBY,2,108
+// MASSART,ELDON,4,105
+// GARTH,JOHN,1,103
+// CREMEANS,RANDOLPH,6,109
+// KREESE,CARRIE,6,109 
+
+Bus: 0
+
+// TC-20
+// Tests Requirements R3, R8
+// short form bus (nonxistent) 
+// expected output: <empty line> 
+
+
+B: 25
+
+// TC-21
+// Tests Requirements R3, R8
+// long form bus (nonxistent) 
+// expected output: <empty line> 
+
+
+Bus: 26
+
+// TC-22
+// Tests Requirements R3, R9
+// short HL grade 
+// expected output: SWEDLUND,SHARRI,3.24,FAFARD,ROCIO,55
+
+
+G: 3 H 
+
+// TC-23
+// Tests Requirements R3, R9
+// short HL grade 
+// expected output: KOZOLA,BUSTER,2.76,HAMER,GAVIN,55
+
+G: 2 L
+
+
+// TC-24
+// Tests Requirements R3, R9
+// short high/low grade 
+// expected output: SWEDLUND,SHARRI,3.24,FAFARD,ROCIO,55
+
+
+G: 3 High 
+
+// TC-25
+// Tests Requirements R3, R9
+// short high/low grade 
+// expected output: KOZOLA,BUSTER,2.76,HAMER,GAVIN,55
+
+
+G: 2 Low
+
+
+// TC-26
+// Tests Requirements R3, R9
+// long HL grade 
+// expected output: CORKER,CARTER,3.12,HANTZ,JED,53
+
+
+Grade: 4 H
+
+// TC-27
+// Tests Requirements R3, R9
+// long HL grade 
+// expected output: IMMERMAN,DEVIN,2.78,HANTZ,JED,52
+
+
+Grade: 4 L
+
+// TC-28
+// Tests Requirements R3, R9
+// long high/low grade 
+// expected output: CORKER,CARTER,3.12,HANTZ,JED,53
+
+
+Grade: 4 High
+
+// TC-29
+// Tests Requirements R3, R9
+// long high/low grade 
+// expected output: IMMERMAN,DEVIN,2.78,HANTZ,JED,52
+
+
+
+Grade: 4 Low
+
+// TC-30
+// Tests Requirements R3, R9
+// long high/low nonexistent grade 
+// expected output: <empty line> 
+
+
+Grade: 8 Low
+
+// TC-31
+// Tests Requirements R3, R10
+// short average gpa
+// expected output: 4: 2.95133333333
+
+
+A: 4
+
+// TC-32
+// Tests Requirements R3, R10
+// long average gpa
+// expected output: 1: 2.995
+
+
+Average: 1
+
+
+// TC-33
+// Tests Requirements R3, R10
+// average gpa wrong grade
+// expected output: <empty line> 
+
+
+A: 7
+
+
+
+// TC-34
+// Tests Requirements R3, R11
+// info short 
+// expected output: 
+// 0: 0
+// 1: 2
+// 2: 13
+// 3: 9
+// 4: 15
+// 5: 0
+// 6: 21
+
+
+I 
+
+// TC-35
+// Tests Requirements R3, R11
+// info long 
+// expected output: 
+// 0: 0
+// 1: 2
+// 2: 13
+// 3: 9
+// 4: 15
+// 5: 0
+// 6: 21
+
+
+Info 
+
+// TC-36
+// Tests Requirements E1
+// incorrect command 
+// expected output: <return to prompt> 
+
+P: 27
+
+Info 
+
+// TC-37
+// Tests Requirements E1
+// incorrect command 
+// expected output: <return to prompt> 
+
+Stud: COLE 
+
+
+// TC-38
+// Tests Requirements R3, R12
+// Quit short 
+// expected output: <end> 
+
+Q
+
+// TC-39
+// Tests Requirements R3, R12
+// Quit long 
+// expected output: <end> 
+
+
+Quit 
+
+// TC-40
+// Tests Requirements NR1
+// Class Students short existing 
+// expected output:  
+
+
+CS: 
+
+

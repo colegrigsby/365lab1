@@ -112,22 +112,14 @@ def info(results, students, inArr):
         gradeNumber(r, students, [0, str(g)])
         results.append(len(r))
 
-# Traceability: implements requirement NR1
+# Traceability: implements requirement NR1, NR2
 
 # method to list all students from a classroom
-def classRoomStudents(results, students, inArr):
-    for s in students:
+def classroom(results, subjects, inArr):
+    for s in subjects:
         if s.room == inArr[1]:
             results.append(s)
 
-
-# Traceability: implements requirement NR2
-
-# method to list all teachers from a classroom
-def classRoomTeachers(results, teachers, inArr):
-    for t in teachers:
-        if t.room == inArr[1]:
-            results.append(t)
 
 # Traceability: implements requirement NR3
 
@@ -140,7 +132,7 @@ def gradeTeachers(results, teachers, inArr):
 # Traceability: implements requirement NR4
 
 # method to list all students from a classroom
-def classRoom(results, students, inArr):
+def classrooms(results, students, inArr):
     #Todo make a list of the enrollment numbers for room
     dict = {}
     for s in students:
@@ -212,12 +204,23 @@ def runProg():
                 for n in resultsArray:
                     print str(g) +": "+ str(n)
                     g += 1
+        
+            #NR4 Enrollment breakdown
+            # E[nrollment]
+            if inputArray[0] == "E" or inputArray[0] == "Enrollment":
+                classrooms(resultsArray, studentList, inputArray)
+                for (room, students) in resultsArray.items():
+                    print room + ": " + str(students)
+            
+        
+        
             #R12 Q[uit]
             #quit the current session
             elif inputArray[0] == "Q" or inputArray[0] == "Quit":
                 inputListFile.close()
                 inputTeachFile.close()  
                 break
+
     
     
         if len(inputArray) == 2:
@@ -251,8 +254,27 @@ def runProg():
             elif inputArray[0] == "A:" or inputArray[0] == "Average:":
                 a = average(resultsArray, studentList, inputArray)
                 print inputArray[1] +": "+ str(a)
-        
-                    
+
+            #NR1 CS classroom students
+            elif inputArray[0] == "CS:" or inputArray[0] == "Class Students:":
+                classroom(resultsArray, studentList, inputArray)
+                for r in resultsArray:
+                    print r.stlastname + "," + r.stfirstname
+                        
+            #NR2 CT Classroom teachers
+            elif inputArray[0] == "CT:" or inputArray[0] == "Class Teachers:":
+                classroom(resultsArray, teacherList, inputArray)
+                for r in resultsArray:
+                    print r.stlastname + "," + r.stfirstname
+
+            #NR3 GT grade teachers
+            elif inputArray[0] == "GT:" or inputArray[0] == "Grade Teachers:":
+                gradeTeachers(resultsArray, teacherList, inputArray)
+                    for r in resultsArray:
+                        print r.stlastname + "," + r.stfirstname
+                            
+
+
         #R5 S[tudent]: <lastname> [B[us]]
         #check if input is for student lastname and bus route
         elif len(inputArray) == 3:
