@@ -90,9 +90,7 @@ def gradeLow(teachResults, results, students, teachers, inArr):
         return min
 
 
-
 # Traceability: implements requirements R3, R10
-
 #function to find the average gpa of a grade
 def average(results, students, inArr):
     gradeNumber(results, students, inArr)
@@ -104,7 +102,6 @@ def average(results, students, inArr):
     return sum/len(results)
 
 # Traceability: implements requirements R3, R11
-
 #function to find the info for students
 def info(results, students, inArr):
     for g in range(0,7):
@@ -113,7 +110,6 @@ def info(results, students, inArr):
         results.append(len(r))
 
 # Traceability: implements requirement NR1, NR2
-
 # function to list all students/teachers from a classroom
 def classroom(results, subjects, inArr):
     for s in subjects:
@@ -122,7 +118,6 @@ def classroom(results, subjects, inArr):
 
 
 # Traceability: implements requirement NR3
-
 # function to list all teachers of a grade
 def gradeTeachers(teachResults, results, students, teachers, inArr):
     for s in students:
@@ -136,19 +131,16 @@ def gradeTeachers(teachResults, results, students, teachers, inArr):
                 teachResults.append(t)
 
 # Traceability: implements requirement NR4
-
 # method to list all students from a classroom
-def classrooms(results, students, inArr):
+def classrooms(dict, results, students, inArr):
     #Todo make a list of the enrollment numbers for room
-    dict = {}
+    #dict = {}
     for s in students:
         if dict.has_key(s.room):
             dict[s.room] = dict[s.room] + 1
         else:
             dict[s.room] = 1
     results = dict
-
-
 
 
 
@@ -202,6 +194,7 @@ def runProg():
         
         resultsArray = []
         teachResultsArray = []
+        dictionary = {}
         if len(inputArray) == 1:
                 #R11 [info]
             if inputArray[0] == "I" or inputArray[0] == "Info":
@@ -214,10 +207,9 @@ def runProg():
             #NR4 Enrollment breakdown
             # E[nrollment]
             if inputArray[0] == "E" or inputArray[0] == "Enrollment":
-                classrooms(resultsArray, studentList, inputArray)
-                for (room, students) in resultsArray.items():
+                classrooms(dictionary, resultsArray, studentList, inputArray)
+                for (room, students) in dictionary.items():
                     print room + ": " + str(students)
-            
         
         
             #R12 Q[uit]
@@ -226,8 +218,6 @@ def runProg():
                 inputListFile.close()
                 inputTeachFile.close()  
                 break
-
-    
     
         if len(inputArray) == 2:
             #R4 S[tudent]: <lastname> 
