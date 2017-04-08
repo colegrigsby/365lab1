@@ -28,7 +28,7 @@ def studentLastName(teachResults, results, students, teachers, inArr):
             results.append(s)
     for t in teachers:
         for r in results:
-            if r.room == t.room:
+            if int(r.room) == int(t.room):
                 teachResults.append(t)
 
 # Traceability: implements requirements R3, R6
@@ -40,7 +40,7 @@ def teacherLastName(teachResults, results, students, teachers, inArr):
             teachResults.append(t)
     for t in teachResults:
         for s in students:
-            if s.room == t.room:
+            if int(s.room) == int(t.room):
                 results.append(s)
 
 # Traceability: implements requirements R3, R7
@@ -68,10 +68,11 @@ def gradeTop(teachResults, results, students, teachers, inArr):
     if len(results) > 0:
         max = results[0]
         for s in results:
+            print s.gpa
             if float(s.gpa) > float(max.gpa):
                 max = s
         for t in teachers:
-            if t.room == max.room:
+            if int(t.room) == int(max.room):
                 teachResults.append(t)
         return max
 
@@ -85,7 +86,7 @@ def gradeLow(teachResults, results, students, teachers, inArr):
             if float(s.gpa) < float(min.gpa):
                 min = s
         for t in teachers:
-            if t.room == min.room:
+            if int(t.room) == int(min.room):
                 teachResults.append(t)
         return min
 
@@ -161,37 +162,35 @@ def gradeAverages(results, students):
 # method to get the average student gpa based on teachers
 
 def teacherAverages(results, students, teachers):
-    tdict = {}
     for t in teachers:
-        if not tdict.has_key(t.lastname):
-            t[t.lastname] = ()
-    for ln in t.keys():
+        if not results.has_key(t.tlastname):
+            results[t.tlastname] = ()
+    for ln in results.keys():
         r = []
         teacherLastName([], r, students, teachers, [0, ln])
         sum = 0
         ls = len(r)
         for s in r:
             sum += float(s.gpa)
-        t[ln] = (sum, ls)
+        results[ln] = (sum/ls, ls)
     
 
 # Traceability: implements requirement NR5
 
 # method to get the average student gpa based on bus routes
 
-def busrouteAverages(results, students, teachers):
-    tdict = {}
+def busrouteAverages(results, students):
     for s in students:
-        if not tdict.has_key(s.bus):
-            t[s.bus] = ()
-    for b in t.keys():
+        if not results.has_key(s.bus):
+            results[s.bus] = ()
+    for b in results.keys():
         r = []
         busRoute(r, students, [0, b])
         sum = 0
         ls = len(r)
         for s in r:
             sum += float(s.gpa)
-        t[b] = (sum, ls)
+        results[b] = (sum/ls, ls)
 
 # Traceability: implements requirements R3 through R13, E1
 
@@ -230,7 +229,9 @@ def runProg():
         
         #add data to list
         teacherList.append(Teacher(data2[0],data2[1],data2[2].rstrip('\n')))
-    
+
+
+
     #run program inputs R1 R2
     while True:
         userInput = raw_input("Please Enter Command: ")
@@ -263,17 +264,24 @@ def runProg():
                 gradeAverages(resultsArray, studentList)
                 g = 0
                 for n in resultsArray:
-                    print str(g) + ": " + str(n[0]) + ", " + str(n[1])
+                    print "Grade: " + str(g) + ": Average GPA: " + str(n[0]) + ", Number of Students: " + str(n[1])
                     g += 1
             
             #TA or TeacherAverage
             if inputArray[0] == "TA" or inputArray[0] == "TeacherAverage":
-                teacherAverages(results, students, teachers)
+                teacherAverages(dictionary, studentList, teacherList)
+                for key in sorted(dictionary):
+                    val = dictionary[key]
+                    print "Teacher: " + key + ": Average GPA: " + str(val[0]) + ", Number of Students: " + str(val[1])
 
-            
+
             #BA or BusAverage
-        
-        
+            if inputArray[0] == "BA" or inputArray[0] == "BusrouteAverage":
+                busrouteAverages(dictionary, studentList)
+                for key in sorted(dictionary):
+                    val = dictionary[key]
+                    print "Bus Number: " + key + ": Average GPA: " + str(val[0]) + ", Number of Students: " + str(val[1])
+    
             #R12 Q[uit]
             #quit the current session
             elif inputArray[0] == "Q" or inputArray[0] == "Quit":
@@ -329,8 +337,11 @@ def runProg():
                 if inputArray[2] == "H" or inputArray[2] == "High":
                     r = gradeTop(teachResultsArray, resultsArray, studentList, teacherList, inputArray)
                     if r is not None:
-                        for t in teachResultsArray:
-                            print r.stlastname + "," + r.stfirstname + "," + r.gpa + "," + t.tlastname + "," + t.tfirstname[:-1] + "," + r.bus
+                        print r.bus
+                        print len(teachResultsArray)
+                        t = teachResultsArray[0]
+                        print r.stlastname + "," + r.stfirstname + "," + str(r.gpa) + ","+ t.tlastname + "," + t.tfirstname + "," + str(r.bus)
+                #print r.stlastname + "," + r.stfirstname + "," + r.gpa + "," + t.tlastname + "," + t.tfirstname + "," + r.bus
                 #R9 G[rade]: <Number> L[ow]
                 elif inputArray[2] == "L" or inputArray[2] == "Low":
                     r = gradeLow(teachResultsArray, resultsArray, studentList, teacherList, inputArray)
