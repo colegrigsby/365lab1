@@ -152,10 +152,8 @@ def classrooms(dict, results, students, inArr):
 def gradeAverages(results, students):
     for i in range(0,7):
         r = []
-        a = average(r, students, [0,i])
-        l = len(results)
-        results.append((a,l))
-
+        a = average(r, students, [0, str(i)])
+        results.append(a)
 
 # Traceability: implements requirement NR5
 
@@ -208,7 +206,6 @@ def runProg():
     # TRACE E1 if file doesn't exist
     #read through students.txt
 
-    #MAKE SURE IT'S THE CORRECT TEXT FILES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     try:
         inputListFile = open("list.txt", 'r')
         inputTeachFile = open("teachers.txt", 'r')
@@ -229,8 +226,6 @@ def runProg():
         
         if len(line2) == 0:
             break
-
-        #MAKE SURE THIS IS RIGHT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         data2 = line2.replace(" ", "").split(',')
         
         #add data to list
@@ -261,9 +256,15 @@ def runProg():
                 for (room, students) in dictionary.items():
                     print room + ": " + str(students)
         
-            #NR5
+            #NR5 Analytics
             
             #GA or GradeAverage
+            if inputArray[0] == "GA" or inputArray[0] == "GradeAverage":
+                gradeAverages(resultsArray, studentList)
+                g = 0
+                for n in resultsArray:
+                    print str(g) + ": " + str(n)
+                    g += 1
             
             #TA or TeacherAverage
             
@@ -350,7 +351,8 @@ def runProg():
                 elif inputArray[2] == "T" or inputArray[2] == "Teacher":
                     classroom(resultsArray, teacherList, inputArray)
                     for t in resultsArray:
-                        print t.tlastname + "," + t.tfirstname
+                        print t.tlastname + "," + t.tfirstname                
+
 
 # Traceability: implements requirements R1, R2
 
