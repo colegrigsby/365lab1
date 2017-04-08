@@ -1,6 +1,6 @@
 # Avinash Sharma
 # Cole Grisby
-# CPE 365 Lab 1
+# CPE 365 Lab 1 Part 2
 
 #object for students
 class Student:
@@ -153,7 +153,8 @@ def gradeAverages(results, students):
     for i in range(0,7):
         r = []
         a = average(r, students, [0, str(i)])
-        results.append(a)
+        results.append((a, len(r)))
+
 
 # Traceability: implements requirement NR5
 
@@ -172,7 +173,6 @@ def teacherAverages(results, students, teachers):
         for s in r:
             sum += float(s.gpa)
         t[ln] = (sum, ls)
-
 
 
 # Traceability: implements requirement NR5
@@ -263,7 +263,7 @@ def runProg():
                 gradeAverages(resultsArray, studentList)
                 g = 0
                 for n in resultsArray:
-                    print str(g) + ": " + str(n)
+                    print str(g) + ": " + str(n[0]) + ", " + str(n[1])
                     g += 1
             
             #TA or TeacherAverage
