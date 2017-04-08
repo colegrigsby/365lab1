@@ -173,7 +173,7 @@ def teacherAverages(results, students, teachers):
         for s in r:
             sum += float(s.gpa)
         t[ln] = (sum, ls)
-
+    
 
 # Traceability: implements requirement NR5
 
@@ -253,8 +253,8 @@ def runProg():
             # E[nrollment]
             if inputArray[0] == "E" or inputArray[0] == "Enrollment":
                 classrooms(dictionary, resultsArray, studentList, inputArray)
-                for (room, students) in dictionary.items():
-                    print room + ": " + str(students)
+                for room in sorted(dictionary.iterkeys()):
+                    print room + ": " + str(dictionary[room])
         
             #NR5 Analytics
             
@@ -267,6 +267,9 @@ def runProg():
                     g += 1
             
             #TA or TeacherAverage
+            if inputArray[0] == "TA" or inputArray[0] == "TeacherAverage":
+                teacherAverages(results, students, teachers)
+
             
             #BA or BusAverage
         

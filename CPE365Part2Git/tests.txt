@@ -371,7 +371,6 @@ Info
 
 Stud: COLE 
 
-
 // TC-38
 // Tests Requirements R3, R12
 // Quit short 
@@ -383,7 +382,6 @@ Q
 // Tests Requirements R3, R12
 // Quit long 
 // expected output: <end> 
-
 
 Quit 
 
@@ -513,7 +511,7 @@ G: 5 Teacher
 
 Grade: 3 T
 
-// TC-50
+// TC-51
 // Tests Requirements NR3
 // Given a grade, find all teachers who teach it
 // expected output:
@@ -521,3 +519,69 @@ Grade: 3 T
 // HAMER,GAVIN
 
 Grade: 2 Teacher
+
+// TC-52
+// Tests Requirements NR4
+// Report the enrollments broken down by classroom
+// expected output:
+// 101: 1
+// 102: 5
+// 103: 2
+// 104: 2
+// 105: 6
+// 106: 2
+// 107: 7
+// 108: 11
+// 109: 5
+// 110: 2
+// 111: 9
+// 112: 8
+
+E
+
+// TC-53
+// Tests Requirements NR4
+// Report the enrollments broken down by classroom
+// expected output:
+// 101: 1
+// 102: 5
+// 103: 2
+// 104: 2
+// 105: 6
+// 106: 2
+// 107: 7
+// 108: 11
+// 109: 5
+// 110: 2
+// 111: 9
+// 112: 8
+
+Enrollment
+
+// TC-54
+// Tests Requirements NR5
+// Report the average GPA in each grade level and the corresponding number of students
+// expected output:
+// 0: 0, 0
+// 1: 2.995, 2
+// 2: 2.94615384615, 13
+// 3: 3.04888888889, 9
+// 4: 2.95133333333, 15
+// 5: 0, 0
+// 6: 2.97714285714, 21
+
+GA
+
+// TC-55
+// Tests Requirements NR5
+// Report the average GPA in each grade level and the corresponding number of students
+// expected output:
+// 0: 0, 0
+// 1: 2.995, 2
+// 2: 2.94615384615, 13
+// 3: 3.04888888889, 9
+// 4: 2.95133333333, 15
+// 5: 0, 0
+// 6: 2.97714285714, 21
+
+GradeAverage
