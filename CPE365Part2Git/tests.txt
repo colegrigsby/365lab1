@@ -356,13 +356,12 @@ I
 Info 
 
 // TC-36
-// Tests Requirements E1
+// Tests Requirements R3 (not valid) 
 // incorrect command 
 // expected output: <return to prompt> 
 
 P: 27
 
-Info 
 
 // TC-37
 // Tests Requirements E1

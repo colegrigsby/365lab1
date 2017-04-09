@@ -63,7 +63,8 @@ def busRoute(results, students, inArr):
 # Traceability: implements requirements R3, R9
 
 #function to search for the highest student in a grade
-def gradeTop(teachResults, results, students, teachers, inArr):
+def gradeTop(teachResults, s, students, teachers, inArr):
+    results = []
     gradeNumber(results, students, inArr)
     if len(results) > 0:
         max = results[0]
@@ -73,6 +74,7 @@ def gradeTop(teachResults, results, students, teachers, inArr):
         for t in teachers:
             if int(t.room) == int(max.room):
                 teachResults.append(t)
+        s = max
         return max
 
 # Traceability: implements requirements R3, R9
@@ -275,7 +277,7 @@ def runProg():
 
 
             #BA or BusAverage
-            if inputArray[0] == "BA" or inputArray[0] == "BusrouteAverage":
+            if inputArray[0] == "BA" or inputArray[0] == "BusAverage":
                 busrouteAverages(dictionary, studentList)
                 for key in sorted(dictionary):
                     val = dictionary[key]
@@ -337,7 +339,8 @@ def runProg():
                     r = gradeTop(teachResultsArray, resultsArray, studentList, teacherList, inputArray)
                     if r is not None:
                         for t in teachResultsArray:
-                            print r.stlastname + "," + r.stfirstname + "," + r.gpa + ","+ t.tlastname + "," + t.tfirstname + "," + r.bus
+                            print r.stlastname + "," + r.stfirstname + "," + r.gpa + "," + t.tlastname + "," + t.tfirstname + "," + r.bus
+
                 #R9 G[rade]: <Number> L[ow]
                 elif inputArray[2] == "L" or inputArray[2] == "Low":
                     r = gradeLow(teachResultsArray, resultsArray, studentList, teacherList, inputArray)

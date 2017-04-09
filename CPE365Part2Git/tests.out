@@ -64,3 +64,191 @@ KREESE,CARRIE,6,109
 Please Enter Command: B: 25
 Please Enter Command: Bus: 26
 Please Enter Command: G: 3 H
+SWEDLUND,SHARRI,3.24,FAFARD,ROCIO,55
+Please Enter Command: G: 2 L
+KOZOLA,BUSTER,2.76,HAMER,GAVIN,55
+Please Enter Command: G: 3 High
+SWEDLUND,SHARRI,3.24,FAFARD,ROCIO,55
+Please Enter Command: G: 2 Low
+KOZOLA,BUSTER,2.76,HAMER,GAVIN,55
+Please Enter Command: Grade: 4 H   
+CORKER,CARTER,3.12,HANTZ,JED,53
+Please Enter Command: Grade: 4 L   
+IMMERMAN,DEVIN,2.78,HANTZ,JED,52
+Please Enter Command: Grade: 4 High
+CORKER,CARTER,3.12,HANTZ,JED,53
+Please Enter Command: Grade: 4 Low
+IMMERMAN,DEVIN,2.78,HANTZ,JED,52
+Please Enter Command: Grade: 8 Low
+Please Enter Command: A: 4
+4: 2.95133333333
+Please Enter Command: Average: 1
+1: 2.995
+Please Enter Command: A: 7
+7: 0
+Please Enter Command: I 
+0: 0
+1: 2
+2: 13
+3: 9
+4: 15
+5: 0
+6: 21
+Please Enter Command: Info
+0: 0
+1: 2
+2: 13
+3: 9
+4: 15
+5: 0
+6: 21
+Please Enter Command: P: 27
+Please Enter Command: Stud: COLE
+Please Enter Command: Q
+pcp071520pcs:CPE365Part2Git cole$ python schoolsearch.py 
+Please Enter Command: Quit
+pcp071520pcs:CPE365Part2Git cole$ python schoolsearch.py 
+Please Enter Command: C: 107 S
+COOKUS,XUAN
+ELHADDAD,SHANTE
+SWEDLUND,SHARRI
+CIGANEK,MANIE
+COVINGTON,TOMAS
+EARLY,TORY
+LINHART,LELA
+Please Enter Command: C: 112 Student
+WORBINGTON,DEEDRA
+SPANICEK,KENDRA
+GUICE,CODI
+GLOR,HUNG
+GUM,NOAH
+NOVICK,ROLLAND
+DELUNA,KRYSTAL
+COMO,ZANDRA
+Please Enter Command: Class: 108 Student
+LIBRANDI,TODD
+HAVIR,BOBBIE
+SARAO,DIEDRA
+VANCOTT,MIKE
+WICINSKY,TERESE
+KOZOLA,BUSTER
+MULLINGS,LEIGHANN
+BUSSMANN,BILLY
+BERBES,DICK
+MULGREW,RANDELL
+TOWLEY,LANE
+Please Enter Command: Class: 108 S
+LIBRANDI,TODD
+HAVIR,BOBBIE
+SARAO,DIEDRA
+VANCOTT,MIKE
+WICINSKY,TERESE
+KOZOLA,BUSTER
+MULLINGS,LEIGHANN
+BUSSMANN,BILLY
+BERBES,DICK
+MULGREW,RANDELL
+TOWLEY,LANE
+Please Enter Command: C: 112 T
+CHIONCHIO,PERLA
+Please Enter Command: C: 103 Teacher
+FALKER,ADOLPH
+Please Enter Command: Class: 105 T
+HANTZ,JED
+Please Enter Command: CLass: 106 Teacher
+Please Enter Command: G: 4 T
+COOL,REUBEN
+HANTZ,JED
+CHIONCHIO,PERLA
+Please Enter Command: G: 5 Teacher
+Please Enter Command: Grade: 3 T
+FAFARD,ROCIO
+ALPERT,JONATHAN
+Please Enter Command: Grade: 2 Teacher
+STEIB,GALE
+HAMER,GAVIN
+Please Enter Command: E 
+101: 1
+102: 5
+103: 2
+104: 2
+105: 6
+106: 2
+107: 7
+108: 11
+109: 5
+110: 2
+111: 9
+112: 8
+Please Enter Command: Enrollment
+101: 1
+102: 5
+103: 2
+104: 2
+105: 6
+106: 2
+107: 7
+108: 11
+109: 5
+110: 2
+111: 9
+112: 8
+Please Enter Command: GA 
+Grade: 0: Average GPA: 0, Number of Students: 0
+Grade: 1: Average GPA: 2.995, Number of Students: 2
+Grade: 2: Average GPA: 2.94615384615, Number of Students: 13
+Grade: 3: Average GPA: 3.04888888889, Number of Students: 9
+Grade: 4: Average GPA: 2.95133333333, Number of Students: 15
+Grade: 5: Average GPA: 0, Number of Students: 0
+Grade: 6: Average GPA: 2.97714285714, Number of Students: 21
+Please Enter Command: GradeAverage
+Grade: 0: Average GPA: 0, Number of Students: 0
+Grade: 1: Average GPA: 2.995, Number of Students: 2
+Grade: 2: Average GPA: 2.94615384615, Number of Students: 13
+Grade: 3: Average GPA: 3.04888888889, Number of Students: 9
+Grade: 4: Average GPA: 2.95133333333, Number of Students: 15
+Grade: 5: Average GPA: 0, Number of Students: 0
+Grade: 6: Average GPA: 2.97714285714, Number of Students: 21
+Please Enter Command: TA
+Teacher: ALPERT: Average GPA: 3.17, Number of Students: 2
+Teacher: BODZIONY: Average GPA: 3.09, Number of Students: 2
+Teacher: CHIONCHIO: Average GPA: 2.985, Number of Students: 8
+Teacher: COOL: Average GPA: 2.91, Number of Students: 1
+Teacher: FAFARD: Average GPA: 3.01428571429, Number of Students: 7
+Teacher: FALKER: Average GPA: 2.995, Number of Students: 2
+Teacher: GAMBREL: Average GPA: 2.96, Number of Students: 5
+Teacher: HAMER: Average GPA: 2.95454545455, Number of Students: 11
+Teacher: HANTZ: Average GPA: 2.91333333333, Number of Students: 6
+Teacher: KERBS: Average GPA: 2.976, Number of Students: 5
+Teacher: NISTENDIRK: Average GPA: 2.96222222222, Number of Students: 9
+Teacher: STEIB: Average GPA: 2.9, Number of Students: 2
+Please Enter Command: TeacherAverage
+Teacher: ALPERT: Average GPA: 3.17, Number of Students: 2
+Teacher: BODZIONY: Average GPA: 3.09, Number of Students: 2
+Teacher: CHIONCHIO: Average GPA: 2.985, Number of Students: 8
+Teacher: COOL: Average GPA: 2.91, Number of Students: 1
+Teacher: FAFARD: Average GPA: 3.01428571429, Number of Students: 7
+Teacher: FALKER: Average GPA: 2.995, Number of Students: 2
+Teacher: GAMBREL: Average GPA: 2.96, Number of Students: 5
+Teacher: HAMER: Average GPA: 2.95454545455, Number of Students: 11
+Teacher: HANTZ: Average GPA: 2.91333333333, Number of Students: 6
+Teacher: KERBS: Average GPA: 2.976, Number of Students: 5
+Teacher: NISTENDIRK: Average GPA: 2.96222222222, Number of Students: 9
+Teacher: STEIB: Average GPA: 2.9, Number of Students: 2
+Please Enter Command: BA 
+Bus Number: 0: Average GPA: 2.9525, Number of Students: 8
+Bus Number: 51: Average GPA: 3.02, Number of Students: 8
+Bus Number: 52: Average GPA: 2.885, Number of Students: 8
+Bus Number: 53: Average GPA: 3.05555555556, Number of Students: 9
+Bus Number: 54: Average GPA: 2.94166666667, Number of Students: 12
+Bus Number: 55: Average GPA: 3.03666666667, Number of Students: 9
+Bus Number: 56: Average GPA: 2.92166666667, Number of Students: 6
+Please Enter Command: BusAverage
+Bus Number: 0: Average GPA: 2.9525, Number of Students: 8
+Bus Number: 51: Average GPA: 3.02, Number of Students: 8
+Bus Number: 52: Average GPA: 2.885, Number of Students: 8
+Bus Number: 53: Average GPA: 3.05555555556, Number of Students: 9
+Bus Number: 54: Average GPA: 2.94166666667, Number of Students: 12
+Bus Number: 55: Average GPA: 3.03666666667, Number of Students: 9
+Bus Number: 56: Average GPA: 2.92166666667, Number of Students: 6
+Please Enter Command: Q
