@@ -340,7 +340,8 @@ def runProg():
                         print r.bus
                         print len(teachResultsArray)
                         t = teachResultsArray[0]
-                        print r.stlastname + "," + r.stfirstname + "," + str(r.gpa) + ","+ t.tlastname + "," + t.tfirstname + "," + str(r.bus)
+                        print r.stlastname + "," + r.stfirstname,
+                        print "," + str(r.gpa) + ","+ t.tlastname + "," + t.tfirstname + "," + str(r.bus)
                 #print r.stlastname + "," + r.stfirstname + "," + r.gpa + "," + t.tlastname + "," + t.tfirstname + "," + r.bus
                 #R9 G[rade]: <Number> L[ow]
                 elif inputArray[2] == "L" or inputArray[2] == "Low":
