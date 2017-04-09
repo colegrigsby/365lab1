@@ -68,7 +68,6 @@ def gradeTop(teachResults, results, students, teachers, inArr):
     if len(results) > 0:
         max = results[0]
         for s in results:
-            print s.gpa
             if float(s.gpa) > float(max.gpa):
                 max = s
         for t in teachers:
@@ -337,17 +336,14 @@ def runProg():
                 if inputArray[2] == "H" or inputArray[2] == "High":
                     r = gradeTop(teachResultsArray, resultsArray, studentList, teacherList, inputArray)
                     if r is not None:
-                        print r.bus
-                        print len(teachResultsArray)
-                        t = teachResultsArray[0]
-                        print r.stlastname + "," + r.stfirstname + "," + str(r.gpa) + ","+ t.tlastname + "," + t.tfirstname + "," + str(r.bus)
-                #print r.stlastname + "," + r.stfirstname + "," + r.gpa + "," + t.tlastname + "," + t.tfirstname + "," + r.bus
+                        for t in teachResultsArray:
+                            print r.stlastname + "," + r.stfirstname + "," + r.gpa + ","+ t.tlastname + "," + t.tfirstname + "," + r.bus
                 #R9 G[rade]: <Number> L[ow]
                 elif inputArray[2] == "L" or inputArray[2] == "Low":
                     r = gradeLow(teachResultsArray, resultsArray, studentList, teacherList, inputArray)
                     if r is not None:
                         for t in teachResultsArray:
-                            print r.stlastname + "," + r.stfirstname + "," + r.gpa + "," + t.tlastname + "," + t.tfirstname[:-1] + "," + r.bus
+                            print r.stlastname + "," + r.stfirstname + "," + r.gpa + "," + t.tlastname + "," + t.tfirstname + "," + r.bus
                 #NR3 G[rade]: <number> T[eacher]
                 elif inputArray[2] == "T" or inputArray[2] == "Teacher":
                     gradeTeachers(teachResultsArray, resultsArray, studentList, teacherList, inputArray)
